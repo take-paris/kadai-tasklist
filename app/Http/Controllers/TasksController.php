@@ -50,14 +50,20 @@ class TasksController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'status' => 'required|max:10',   // add
+            'content' => 'required|max:191',
+        ]);
+
+
         $task = new Task;
+        $task->status = $request->status;    // add
         $task->content = $request->content;
         $task->save();
 
-        return redirect('/');
-        //
-    }
 
+        return redirect('/');
+    }
     /**
      * Display the specified resource.
      *
@@ -99,12 +105,19 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'status' => 'required|max:10',   // add
+            'content' => 'required|max:191',
+        ]);
+
+
         $task = Task::find($id);
+        $task->status = $request->status;    // add
         $task->content = $request->content;
         $task->save();
 
+
         return redirect('/');
-        //
     }
 
     /**
