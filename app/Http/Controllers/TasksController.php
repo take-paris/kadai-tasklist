@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 use App\Task;
-
 
 class TasksController extends Controller
 {
@@ -35,7 +33,7 @@ class TasksController extends Controller
      */
     public function create()
     {
-        $task = new Tasks;
+        $task = new Task;
 
         return view('tasks.create', [
             'task' => $task,

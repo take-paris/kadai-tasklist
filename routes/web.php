@@ -1,6 +1,6 @@
 <?php
 
 
-Route::resource('messages', 'TasksController');
+Route::resource('tasks', 'TasksController');
 
 Route::get('/', 'TasksController@index');
