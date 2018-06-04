@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>id: {{ $message->id }} の課題編集ページ</h1>
+    <h1>id: {{ $task->id }} の課題編集ページ</h1>
 
     {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
 
