@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>kadai-tasklist</title>
-    </head>
-
     <body>
-        @include('commons.error_messages')
-
-        @yield('content')
+        @include('commons.navbar')
+        
+        <div class="container">
+            @include('commons.error_messages')
+            
+            @yield('content')
+        </div>
     </body>
 </html>
